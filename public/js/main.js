@@ -38,7 +38,7 @@ async function main(canvas) {
     async function runLevel(name) {
         const loadScreen = new Scene();
         loadScreen.comp.layers.push(createColorLayer('#000'));
-        loadScreen.comp.layers.push(createTextLayer(font, `Loading ${name}...`));
+        loadScreen.comp.layers.push(createTextLayer(font, `LOADING ${name}...`));
         sceneRunner.addScene(loadScreen);
         sceneRunner.runNext();
 
@@ -56,7 +56,7 @@ async function main(canvas) {
         const playerProgressLayer = createPlayerProgressLayer(font, level);
         const dashboardLayer = createDashboardLayer(font, level);
 
-        mario.pos.set(0, 0);
+        mario.pos.set(...level.playerPosition);
         level.entities.add(mario);
 
         const playerEnv = createPlayerEnv(mario);

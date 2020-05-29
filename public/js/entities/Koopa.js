@@ -7,10 +7,15 @@ import Solid from '../traits/Solid.js';
 import Stomper from '../traits/Stomper.js';
 import {loadSpriteSheet} from '../loaders/sprite.js';
 
-export function loadKoopa() {
-    return loadSpriteSheet('koopa')
+export function loadKoopaGreen() {
+    return loadSpriteSheet('koopa-green')
     .then(createKoopaFactory);
 }
+
+export function loadKoopaBlue() {
+    return loadSpriteSheet('koopa-blue')
+        .then(createKoopaFactory);
+    }
 
 const STATE_WALKING = Symbol('walking');
 const STATE_HIDING = Symbol('hiding');
@@ -129,7 +134,7 @@ function createKoopaFactory(sprite) {
     return function createKoopa() {
         const koopa = new Entity();
         koopa.size.set(16, 16);
-        koopa.offset.y = 8;
+        koopa.offset.y = 7;
 
         koopa.addTrait(new Physics());
         koopa.addTrait(new Solid());
