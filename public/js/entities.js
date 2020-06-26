@@ -7,6 +7,7 @@ import {loadCannon} from './entities/Cannon.js';
 import {loadBrickShrapnel} from './entities/BrickShrapnel.js';
 import {loadPipePortal} from './entities/PipePortal.js';
 import {loadFlagPole} from './entities/FlagPole.js';
+import {loadPlatform} from './entities/Platform.js';
 
 function createPool(size) {
     const pool = [];
@@ -62,6 +63,8 @@ export async function loadEntities(audioContext) {
         setup(loadBrickShrapnel)
             .then(createPool(8))
             .then(addAs('brickShrapnel')),
+        setup(loadPlatform)
+            .then(addAs('platform')),
     ]);
 
     return entityFactories;

@@ -1,0 +1,14 @@
+{
+    "imageURL": "/img/sprites.png",
+
+    "frames": [
+        {
+            "name": "beam",
+            "rect": [96, 208, 8, 8]
+        },
+        {
+            "name": "cloud-ball",
+            "rect": [128, 208, 8, 8]
+        }
+    ]
+}
